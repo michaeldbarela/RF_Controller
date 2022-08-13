@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include "RF_Transmitter.h"
 
 // arduino functions
 void setup(void);
