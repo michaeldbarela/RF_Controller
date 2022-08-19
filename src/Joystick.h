@@ -19,17 +19,19 @@ private:
 	int16_t mapY;
 
 public:
+	// default constructor
+	Joystick(void);
 	// constructor
 	Joystick(uint8_t VRx, uint8_t VRy, uint8_t SW);
 	void update(void);
 
 	// getter functions
-	int get_xPosition(void);
-	int get_yPosition(void);
-	int get_SW_state(void);
-	int get_mapX(void);
-	int get_mapY(void);
+	uint16_t get_xPosition(void);
+	uint16_t get_yPosition(void);
+	uint8_t get_SW_state(void);
+	uint16_t get_mapX(void);
+	uint16_t get_mapY(void);
 
 	// print for debugging
-	void print_dbg();
+	void print_dbg(void);
 };

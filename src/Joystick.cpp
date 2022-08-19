@@ -1,5 +1,16 @@
 #include "Joystick.h"
 
+Joystick::Joystick(void){
+	xPosition = 0;
+	yPosition = 0;
+	SW_state = 0;
+	mapX = 0;
+	mapY = 0;
+	VRx = 0;
+	VRy = 0;
+	SW = 0;
+}
+
 Joystick::Joystick(uint8_t VRx, uint8_t VRy, uint8_t SW){
 	xPosition = 0;
 	yPosition = 0;
@@ -23,27 +34,27 @@ void Joystick::update(void) {
 	mapY = map(yPosition, 0, 1023, -512, 512);
 }
 
-int Joystick::get_xPosition(void){
+uint16_t Joystick::get_xPosition(void){
 	return xPosition;
 }
 
-int Joystick::get_yPosition(void){
+uint16_t Joystick::get_yPosition(void){
 	return yPosition;
 }
 
-int Joystick::get_SW_state(void){
+uint8_t Joystick::get_SW_state(void){
 	return SW_state;
 }
 
-int Joystick::get_mapX(void){
+uint16_t Joystick::get_mapX(void){
 	return mapX;
 }
 
-int Joystick::get_mapY(void){
+uint16_t Joystick::get_mapY(void){
 	return mapY;
 }
 
-void Joystick::print_dbg(){
+void Joystick::print_dbg(void){
 	Serial.print("X: ");
 	Serial.print(mapX);
 	Serial.print(" | X Analog: ");
