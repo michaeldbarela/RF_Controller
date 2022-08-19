@@ -10,11 +10,13 @@ private:
 	uint8_t VRx;
 	uint8_t VRy;
 	uint8_t SW;
-	uint8_t xPosition;
-	uint8_t yPosition;
+	// these analog positions can range from 0 to 1023
+	uint16_t xPosition;
+	uint16_t yPosition;
 	uint8_t SW_state;
-	uint8_t mapX;
-	uint8_t mapY;
+	// these will map the positition values to a range of -512 to 512
+	int16_t mapX;
+	int16_t mapY;
 
 public:
 	// constructor
