@@ -12,6 +12,7 @@ void loop(void);
 uint8_t count;
 uint8_t prev_count;
 Joystick joystick_left = Joystick(A0, A1, 2);
+Joystick joystick_right = Joystick(A2, A3, 3);
 
 // main function
 int main(void){
@@ -34,6 +35,8 @@ void setup(void){
 // Main logic of the program
 void loop(void){
 	joystick_left.update();
+	joystic_right.update();
 	joystick_left.print_dbg();
+	joystick_right.print_dbg();
 	delay(100);
 }
