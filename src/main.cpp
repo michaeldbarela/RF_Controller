@@ -35,7 +35,7 @@ void setup(void){
 // Main logic of the program
 void loop(void){
 	joystick_left.update();
-	joystic_right.update();
+	joystick_right.update();
 	joystick_left.print_dbg();
 	joystick_right.print_dbg();
 	delay(100);
