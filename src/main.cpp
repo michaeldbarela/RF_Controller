@@ -1,5 +1,7 @@
 #include <Arduino.h>
 #include "RF_Transmitter.h"
+#include "RF_Receiver.h"
+#include "Joystick.h"
 
 // arduino functions
 void setup(void);
