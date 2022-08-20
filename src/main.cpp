@@ -20,11 +20,13 @@ void joysticks_en(uint8_t setup_loop, uint8_t enable);
 void rf_tx_en(uint8_t setup_loop, uint8_t enable);
 void rf_rx_en(uint8_t setup_loop, uint8_t enable);
 
-// global variables
+// global objects
 Joystick joystick_left;
 Joystick joystick_right;
 RF_Transmitter rf_tx;
 RF_Receiver rf_rx;
+// global variables
+uint8_t tx_data;
 
 // main function
 int main(void){
@@ -71,7 +73,8 @@ void rf_tx_en(uint8_t setup_loop, uint8_t enable){
 	if(enable & setup_loop == 1){
 		rf_tx = RF_Transmitter(9, 10);
 	}else if(enable & setup_loop == 2){
-
+		rf_tx.update('t');
+		rf_tx.print_dbg();
 	}
 }
 
@@ -79,6 +82,7 @@ void rf_rx_en(uint8_t setup_loop, uint8_t enable){
 	if(enable & setup_loop == 1){
 		rf_rx = RF_Receiver(9, 10);
 	}else if(enable & setup_loop == 2){
-
+		rf_rx.update();
+		rf_rx.print_dbg();
 	}
 }
