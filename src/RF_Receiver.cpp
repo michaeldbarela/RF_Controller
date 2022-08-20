@@ -16,12 +16,10 @@ RF_Receiver::RF_Receiver(uint8_t CE, uint8_t CSN){
 	radio.startListening();
 }
 
-uint8_t RF_Receiver::update(void){
-	uint8_t data;
+void RF_Receiver::update(void){
 	if(radio.available()){
-		radio.read(&data, sizeof(data));
+		radio.read(&rx_data, sizeof(rx_data));
 	}
-	return data;
 }
 
 RF24 RF_Receiver::get_radio(void){

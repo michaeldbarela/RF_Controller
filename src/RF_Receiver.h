@@ -20,7 +20,7 @@ public:
 	// parameterized constructor
 	RF_Receiver(uint8_t CE, uint8_t CSN);
 	// update function for use in loop
-	uint8_t update(void);
+	void update(void);
 
 	// getter functions
 	RF24 get_radio(void);

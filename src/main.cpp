@@ -24,6 +24,7 @@ void rf_rx_en(uint8_t setup_loop, uint8_t enable);
 Joystick joystick_left;
 Joystick joystick_right;
 RF_Transmitter rf_tx;
+RF_Receiver rf_rx;
 
 // main function
 int main(void){
@@ -76,7 +77,7 @@ void rf_tx_en(uint8_t setup_loop, uint8_t enable){
 
 void rf_rx_en(uint8_t setup_loop, uint8_t enable){
 	if(enable & setup_loop == 1){
-
+		rf_rx = RF_Receiver(9, 10);
 	}else if(enable & setup_loop == 2){
 
 	}
