@@ -1,5 +1,7 @@
 #include "RF_Transmitter.h"
 
+const byte address[6] = "00001";
+
 RF_Transmitter::RF_Transmitter(void){
 	
 }

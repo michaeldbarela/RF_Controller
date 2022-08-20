@@ -4,8 +4,6 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 
-const byte address[6] = "00001";
-
 class RF_Transmitter{
 private:
 	// pins to be set after calling parameterized constructor
