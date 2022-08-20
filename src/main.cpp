@@ -4,15 +4,18 @@
 #include "RF_Receiver.h"
 #include "Joystick.h"
 
+// for use with functions to designate setup or loop logic
 #define SETUP	1
 #define LOOP 2
-#define JOYSTICKS_EN 1
-#define RF_TX_EN 0
+// Enable objects by setting constants to 1
+#define JOYSTICKS_EN 0
+#define RF_TX_EN 1
 #define RF_RX_EN 0
 
 // arduino functions
 void setup(void);
 void loop(void);
+// enable object and setup or loop logic
 void joysticks_en(uint8_t setup_loop, uint8_t enable);
 void rf_tx_en(uint8_t setup_loop, uint8_t enable);
 void rf_rx_en(uint8_t setup_loop, uint8_t enable);
@@ -20,6 +23,7 @@ void rf_rx_en(uint8_t setup_loop, uint8_t enable);
 // global variables
 Joystick joystick_left;
 Joystick joystick_right;
+RF_Transmitter rf_tx;
 
 // main function
 int main(void){
@@ -56,15 +60,15 @@ void joysticks_en(uint8_t setup_loop, uint8_t enable){
  		joystick_right = Joystick(A2, A3, 3);
 	}else if(enable & setup_loop == 2){
 		joystick_left.update();
-		joystick_right.update();
+		// joystick_right.update();
 		joystick_left.print_dbg();
-		joystick_right.print_dbg();
+		// joystick_right.print_dbg();
 	}
 }
 
 void rf_tx_en(uint8_t setup_loop, uint8_t enable){
 	if(enable & setup_loop == 1){
-
+		rf_tx = RF_Transmitter(9, 10);
 	}else if(enable & setup_loop == 2){
 
 	}
