@@ -9,8 +9,8 @@
 #define LOOP 2
 // Enable objects by setting constants to 1
 #define JOYSTICKS_EN 0
-#define RF_TX_EN 1
-#define RF_RX_EN 0
+#define RF_TX_EN 0
+#define RF_RX_EN 1
 
 // arduino functions
 void setup(void);
@@ -54,7 +54,7 @@ void loop(void){
 	joysticks_en(LOOP, JOYSTICKS_EN);
 	rf_tx_en(LOOP, RF_TX_EN);
 	rf_rx_en(LOOP, RF_RX_EN);
-	delay(100);
+	delay(1000);
 }
 
 void joysticks_en(uint8_t setup_loop, uint8_t enable){
