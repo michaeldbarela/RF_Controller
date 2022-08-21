@@ -9,7 +9,7 @@ RF_Receiver::RF_Receiver(void){
 RF_Receiver::RF_Receiver(uint8_t CE, uint8_t CSN){
 	this->CE = CE;
 	this->CSN = CSN;
-	RF24 radio(this->CE, this->CSN);
+	radio = RF24(this->CE, this->CSN);
 	radio.begin();
 	radio.openReadingPipe(0, address);
 	radio.setPALevel(RF24_PA_MIN);
